@@ -1,0 +1,21 @@
+    '''设置列表可显示的字段'''
+    list_display = ('title', 'author',  'status', 'mod_date',)
+
+    '''设置过滤选项'''
+    list_filter = ('status', 'pub_date', )
+
+    '''每页显示条目数'''
+    list_per_page = 5
+
+    '''设置可编辑字段'''
+    list_editable = ('status',)
+
+    '''按日期月份筛选'''
+    date_hierarchy = 'pub_date'
+
+    '''按发布日期排序'''
+    ordering = ('-mod_date',)
+
+
+render()的作用是将数据渲染到指定的模板，第一个参数必须是request，第二个参数是模板的位置，第三个参数是要传递到模板的数据，这些数据是字典形式的。
+本例的 templates 目录是Django默认的存放本应用所需模板的目录，如果不用自定义的方式指定模板位置，Django会在运行时自动来这里查找render()函数中所指定的模板文件。
